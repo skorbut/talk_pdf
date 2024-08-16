@@ -1,0 +1,2 @@
+module SablonDocumentsHelper
+end

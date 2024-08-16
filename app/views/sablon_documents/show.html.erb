@@ -1,0 +1,16 @@
+<h1><%= @sablon_document.title %></h1>
+
+<% @sablon_document.variables&.each do |key, value| %>
+  <p class="code"><%= key %>:<%= value %></p>
+<% end %>
+
+<% if(@sablon_document.example_pdf.attached?) %>
+<p>
+Rendered pdf:
+</p>
+<embed src="<%= url_for(@sablon_document.example_pdf) %>" width = "800" height = "700" type="application/pdf">
+<% end %>
+
+<div class = "actions">
+  <%= link_to "Edit example", edit_sablon_document_path(@sablon_document) %>
+</div>

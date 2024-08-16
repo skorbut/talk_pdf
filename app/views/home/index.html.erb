@@ -1,0 +1,35 @@
+<h1>Let's generate some pdf</h1>
+
+<p>
+This example application lets you generate some pdf documents based on different technologies available in Ruby/Rails and around. This is not a complete overview of all the gems related to pdf creation. It is more a personal journey of my past encounters with the topic.
+</p>
+<p>
+Most of the gems are actually depending on other applications installed on your system/platform in order to generate the actual pdf document.
+</p>
+
+<h2>Draw a rectangle (2012)</h2>
+
+<p>
+  First stop of generating pdf content is based on <a href = "https://github.com/prawnpdf/prawn">prawn</a>. It allows to draw on a kind of canvas and fill in some text. Useful when generating more graphical content like shipping labels.
+</p>
+
+<%= link_to "Play with prawn", prawn_documents_path %>
+
+<h2>Filling the gaps (2019)</h2>
+
+<p>
+  Next station is <a href = "https://github.com/senny/sablon">sablon</a>. It allows to use word documents and the mailmerge feature to insert dynamic content. This basically converted the word document into a template with placeholders. Then convert it to pdf using libreoffice.
+</p>
+
+<%= link_to "Play with sablon", sablon_documents_path %>
+
+<h2>Build a report (2024)</h2>
+
+<p>
+  My current assignment is building a report based on some <a href="https://www.iso.org/standard/71206.html">ISO standard</a> regarding "Greenhouse gases — Carbon footprint of products — Requirements and guidelines for quantification". The report is part of the website and will be downloadable as pdf. Since the pdf will also be used without the website it is not possible to refer to the browsers "print to pdf" functionality.
+</p>
+<p>
+  Instead the report is created using erb/html and rendered by <a href="https://weasyprint.org/">weasyprint</a> a python tool that renders the pdf without a browser engine.
+</p>
+
+<%= link_to "Play with weasyprint", weasyprint_documents_path %>

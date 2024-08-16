@@ -1,0 +1,29 @@
+<h1>Draw a rectangle (2012)</h1>
+
+<h2>How does it work</h2>
+<p>
+  Create a prawn pdf document instance and call respective methods to add text and shapes.
+</p>
+
+<h2>Installation</h2>
+
+Add gem "prawn" to your Gemfile and run bundle install. No external tools needed. "Program" your document using plain ruby.
+
+<h2>Manual</h2>
+
+See the <a href="https://prawnpdf.org/manual.pdf" target="_blank">generated manual</a> for all options prawn provides.
+
+<h2>When to use</h2>
+<ul>
+  <li>create pixel perfect pdf documents</li>
+  <li>need to draw boxes around stuff</li>
+  <li>need to create pdf without external help</li>
+</ul>
+
+<h2>Examples</h2>
+
+<%= render @prawn_documents || "empty_list" %>
+
+<div class = "actions">
+  <%= link_to "New example", new_prawn_document_path %>
+</div>

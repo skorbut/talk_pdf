@@ -1,0 +1,21 @@
+<%= form_with model: prawn_document do |form| %>
+  <p>
+    <b>Title</b><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <b>Width</b>
+    <%= form.text_field :width %>
+  </p>
+  <p>
+    <b>Height</b>
+    <%= form.text_field :height %>
+  </p>
+  <p>
+    <b>Content</b><br>
+    <%= form.text_area :content %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

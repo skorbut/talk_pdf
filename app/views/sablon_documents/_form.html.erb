@@ -1,0 +1,23 @@
+<%= form_with model: sablon_document do |form| %>
+  <% if sablon_document.new_record? %>
+    <p>
+      <b>Title</b><br>
+      <%= form.text_field :title %>
+    </p>
+    <p>
+      <b>Upload Template</b><br>
+      <%= form.file_field :template%>
+    </p>
+  <% end %>
+  <%= form.fields_for :variables do |v| %>
+    <% (sablon_document.variables || {}).each do |key, value| %>
+      <p>
+        <b><%= key %></b><br>
+        <%= v.text_field key.to_sym, value: value%>
+      </p>
+    <% end %>
+  <% end %>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

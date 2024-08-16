@@ -1,0 +1,22 @@
+<h1><%= @weasyprint_document.title %></h1>
+<h2>ERB template:</h2>
+<p class="code">
+  <%= @weasyprint_document.template %>
+</p>
+<% if @weasyprint_document.variables&.any? %>
+  <h2>Variables </h2>
+  <% @weasyprint_document.variables&.each do |key, value| %>
+    <p class="code"><%= key %>: <%= value %></p>
+  <% end %>
+<% end %>
+
+<% if(@weasyprint_document.example_pdf.attached?) %>
+<p>
+Rendered pdf:
+</p>
+<embed src="<%= url_for(@weasyprint_document.example_pdf) %>" width = "800" height = "700" type="application/pdf">
+<% end %>
+
+<div class = "actions">
+  <%= link_to "Edit example", edit_weasyprint_document_path(@weasyprint_document) %>
+</div>

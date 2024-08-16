@@ -1,0 +1,30 @@
+<h1>Filling the gaps (2019)</h1>
+
+<h2>How does it work</h2>
+<p>
+  This approach combines 2 gems to replace fields in a word document and convert these to a pdf document. Replacing MAILMERGE fields is done by the sablon gem. This allows word documents to act as templates. After replacing all the fields the resulting document is converted to pdf via the libreconf gem. The gem only works with a libreoffice executable in reach. It calls the libreoffice to do the pdf conversion.
+</p>
+<h2>Installation</h2>
+<p>
+  Add gems "sablon" and "libreconv" to your Gemfile and run bundle install. You need a libre office installation on your machine since the actual pdf generation is outsourced to libre office. when calling the converter you have to provide the path to the "soffice" binary.
+</p>
+<h2>Manual</h2>
+<p>
+  See the <a href="https://github.com/senny/sablon" target="_blank">sablon github repository</a> for all options sablon provides. See the <a href="https://github.com/DocSpring/libreconv">libreconf github repository</a> on how to call the converter.
+</p>
+<h2>When to use</h2>
+<ul>
+  <li>Your customer already has a lot of word documents</li>
+  <li>You thought the customer will provide the "templates"</li>
+  <li>You like formatting word documents</li>
+  <li>You like repeating stuff since there are no partials in word</li>
+  <li>You like working alone, Merge Conflicts involving word files aren't fun</li>
+</ul>
+
+<h2>Examples</h2>
+
+<%= render @sablon_documents || "empty_list" %>
+
+<div class = "actions">
+  <%= link_to "New example", new_sablon_document_path %>
+</div>

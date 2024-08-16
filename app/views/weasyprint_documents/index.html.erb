@@ -1,0 +1,27 @@
+<h1>Build a report (2024)</h1>
+
+<h2>How does it work</h2>
+<p>
+  Weasyprint is an external tool that takes html as standard in and returns a pdf as standard out. This makes it easy to integrate into a ruby program or even a rails app. It does not rely on a webbrowser to generate the pdf
+</p>
+<h2>Installation</h2>
+<p>
+  Install weasyprint according to your operating systems preferred way of installing stuff. On a mac "brew install weasyprint" worked just fine.
+</p>
+<h2>Manual</h2>
+<p>
+  Open the <a href="https://weasyprint.org/" target="_blank">weasyprint website</a> for all the stuff you can do with weasyprint.
+</p>
+<h2>When to use</h2>
+<ul>
+  <li>You are fluent in html or anything that generates html</li>
+  <li>You know how to generate stuff without js</li>
+</ul>
+
+<h2>Examples</h2>
+
+<%= render @weasyprint_documents || "empty_list" %>
+
+<div class = "actions">
+  <%= link_to "New example", new_weasyprint_document_path %>
+</div>

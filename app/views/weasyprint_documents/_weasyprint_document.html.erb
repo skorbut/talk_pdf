@@ -1,0 +1,4 @@
+<div>
+  <h3><%= link_to weasyprint_document.title, weasyprint_document_path(weasyprint_document) %></h3>
+  <%= link_to "Delete", weasyprint_document_path(weasyprint_document), data: { turbo_method: :delete } %>
+</div>

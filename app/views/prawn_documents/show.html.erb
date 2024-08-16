@@ -1,0 +1,16 @@
+<h1><%= @prawn_document.title %></h1>
+
+<% @prawn_document.content.lines.each do |line| %>
+  <p class="code"><%= line %></p>
+<% end %>
+
+<% if(@prawn_document.example_pdf.attached?) %>
+<p>
+Rendered pdf:
+</p>
+<embed src="<%= url_for(@prawn_document.example_pdf) %>" width = "800" height = "700" type="application/pdf">
+<% end %>
+
+<div class = "actions">
+  <%= link_to "Edit example", edit_prawn_document_path(@prawn_document) %>
+</div>

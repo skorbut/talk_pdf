@@ -1,0 +1,17 @@
+<%= form_with model: weasyprint_document do |form| %>
+  <p>
+    <b>Title</b><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <b>ERB Template Data</b><br>
+    <%= form.text_area :template %>
+  </p>
+  <p>
+    <b>Some variables(in json format)</b><br>
+    <%= form.text_area :variables, value: weasyprint_document.variables&.to_json ||"{\"example\":true }" %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
